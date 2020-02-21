@@ -69,7 +69,7 @@ function(qt_android_build_apk)
         set(ANDROIDDEPLOYQT_EXTRA_ARGS
             ${ANDROIDDEPLOYQT_EXTRA_ARGS} --jdk '${JAVA_HOME}')
     endif()
-    if(${CMAKE_BUILD_TYPE} STREQUAL "Release")
+    if(${CMAKE_BUILD_TYPE} STREQUAL "release")
         set(ANDROIDDEPLOYQT_EXTRA_ARGS
             ${ANDROIDDEPLOYQT_EXTRA_ARGS} --release)
         set(APK_FILENAME ${APK_TARGET}-apk-build-release-unsigned.apk)
@@ -101,10 +101,13 @@ function(qt_android_build_apk)
 
     # Step 4: Create a custom target which pushes the created APK onto
     # the device.
+		SET(APK_PATH ${APK_DIR}/build/outputs/apk/${CMAKE_BUILD_TYPE}/${APK_FILENAME})
+		MESSAGE(STATUS "APK_PATH: ${APK_PATH}")
+
     add_custom_target(
         ${APK_TARGET}-apk-install
         COMMAND ${ANDROID_SDK_ROOT}/platform-tools/adb install -r
-            ${APK_DIR}/build/outputs/apk/${APK_FILENAME}
+            ${APK_PATH}
         DEPENDS
             ${APK_TARGET}-apk
     )
