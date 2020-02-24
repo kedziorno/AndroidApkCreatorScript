@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.1)
 project(android-cmake-demo LANGUAGES CXX)
 
 set(Qt5_DIR "$ENV{QT_ROOT}/android_armv7/lib/cmake/Qt5")
-set(CMAKE_BUILD_TYPE "release")
+set(CMAKE_BUILD_TYPE "debug")
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)

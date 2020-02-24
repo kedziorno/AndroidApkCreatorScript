@@ -5,8 +5,8 @@ import QtQuick.Window 2.11
 
 Window {
     visible: true
-    width: 640
-    height: 480
+    width: 320
+    height: 240
     title: qsTr("Hello World")
 
     Label {
@@ -14,11 +14,4 @@ Window {
         anchors.centerIn: parent
     }
 }
-
-<!-- qml.qrc -->
-<RCC>
-    <qresource prefix="/">
-        <file>main.qml</file>
-    </qresource>
-</RCC>
 
