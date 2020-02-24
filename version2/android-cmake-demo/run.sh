@@ -11,7 +11,7 @@ cd build
 cmake \
     -DCMAKE_CXX_COMPILER=$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/armv7a-linux-androideabi22-clang++ \
     -DCMAKE_C_COMPILER=$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/armv7a-linux-androideabi22-clang \
-    -DCMAKE_SYSTEM_NAME=Android \
+    -DCMAKE_SYSTEM_NAME=ANDROID \
     -DCMAKE_SYSTEM_VERSION=22 \
 		..
 
