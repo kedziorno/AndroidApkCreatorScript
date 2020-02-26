@@ -15,7 +15,7 @@ public:
 	Widget(QWidget *parent = nullptr);
 	void setOutput(QByteArray &string);
 	void setPid(QByteArray &string);
-	void setProgramStatus(QByteArray &string);
+	void setProgramStatus(QByteArray &string, bool append);
 
 	~Widget();
 

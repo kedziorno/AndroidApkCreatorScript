@@ -21,6 +21,8 @@ public slots:
     void 	readyReadStandardError();
     void 	readyReadStandardOutput();
     void 	started();
+		void 	errorOccurred(QProcess::ProcessError error);
+		void	stateChanged(QProcess::ProcessState newState);
 
 private:
 		Widget *w;
