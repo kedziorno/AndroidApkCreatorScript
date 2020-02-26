@@ -11,6 +11,7 @@ class Monitor : public QObject
 public:
     explicit Monitor(QObject *parent = 0);
 		void setPid(qint64 pid);
+		void setProgramStatus(QString & string);
 
 signals:
 

@@ -14,7 +14,9 @@ class Widget : public QWidget
 public:
 	Widget(QWidget *parent = nullptr);
 	void setOutput(QByteArray &string);
-	void setError(QByteArray &string);
+	void setPid(QByteArray &string);
+	void setProgramStatus(QByteArray &string);
+
 	~Widget();
 
 private:

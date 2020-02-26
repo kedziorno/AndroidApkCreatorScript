@@ -14,7 +14,12 @@ void Monitor::setPid(qint64 pid) {
 	QString pidS = QString::number(pid);
 	QByteArray pidText;
 	pidText.append(pidS);
-	w->setError(pidText);
+	w->setPid(pidText);
+}
+
+void Monitor::setProgramStatus(QString & string) {
+	QByteArray bytearray = string.toLocal8Bit();
+	w->setProgramStatus(bytearray);
 }
 
 void Monitor::error(QProcess::ProcessError error)

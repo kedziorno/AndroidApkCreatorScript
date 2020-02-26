@@ -15,7 +15,8 @@ public:
 	QWidget *centralWidget;
 	QVBoxLayout *verticalLayout;
 	QTextEdit *textOutput;
-	QTextEdit *textError;
+	QTextEdit *textPid;
+	QTextEdit	*textProgramStatus;
     
   void setupUi(QWidget *Widget) {
 		if (Widget->objectName().isEmpty())
@@ -25,10 +26,12 @@ public:
 		centralWidget = new QWidget(Widget);
 		verticalLayout = new QVBoxLayout(centralWidget);
 		textOutput = new QTextEdit(centralWidget);
-		textError = new QTextEdit(centralWidget);
+		textPid = new QTextEdit(centralWidget);
+		textProgramStatus = new QTextEdit(centralWidget);
 
 		verticalLayout->addWidget(textOutput);
-		verticalLayout->addWidget(textError);
+		verticalLayout->addWidget(textPid);
+		verticalLayout->addWidget(textProgramStatus);
 
 		retranslateUi(Widget);
 

@@ -12,8 +12,12 @@ void Widget::setOutput(QByteArray &string) {
 	ui->textOutput->setText(string);
 }
 
-void Widget::setError(QByteArray &string) {
-	ui->textError->setText(string);
+void Widget::setPid(QByteArray &string) {
+	ui->textPid->setText(string);
+}
+
+void Widget::setProgramStatus(QByteArray &string) {
+	ui->textProgramStatus->setText(string);
 }
 
 Widget::~Widget()

@@ -22,6 +22,8 @@ int main(int argc, char *argv[])
 
 	Monitor m;
 	m.setPid(pid);
+	QString status = QString("STATUS");
+	m.setProgramStatus(status);
 
 	QObject::connect(&vc_process, SIGNAL(finished(int,QProcess::ExitStatus)), &m, SLOT(finished(int,QProcess::ExitStatus)));
   QObject::connect(&vc_process, SIGNAL(readyReadStandardOutput()), &m, SLOT(readyReadStandardOutput()));
