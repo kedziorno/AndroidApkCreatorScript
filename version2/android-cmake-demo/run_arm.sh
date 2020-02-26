@@ -14,6 +14,7 @@ cmake \
     -DCMAKE_SYSTEM_NAME=ANDROID \
     -DCMAKE_SYSTEM_VERSION=22 \
 		-DCMAKE_PREFIX_PATH=/opt/Qt/5.12.6/android_armv7 \
+		-DBUILD_ARM=1 \
 		..
 
 VERBOSE=1 make

@@ -4,29 +4,40 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QWidget>
+#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QTextEdit>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_Widget
 {
 public:
+	QWidget *centralWidget;
+	QVBoxLayout *verticalLayout;
+	QTextEdit *textOutput;
+	QTextEdit *textError;
+    
+  void setupUi(QWidget *Widget) {
+		if (Widget->objectName().isEmpty())
+		    Widget->setObjectName(QString::fromUtf8("votecnode"));
+		Widget->resize(320, 480);
 
-    void setupUi(QWidget *Widget)
-    {
-        if (Widget->objectName().isEmpty())
-            Widget->setObjectName(QString::fromUtf8("Widget"));
-        Widget->resize(320, 240);
+		centralWidget = new QWidget(Widget);
+		verticalLayout = new QVBoxLayout(centralWidget);
+		textOutput = new QTextEdit(centralWidget);
+		textError = new QTextEdit(centralWidget);
 
-        retranslateUi(Widget);
+		verticalLayout->addWidget(textOutput);
+		verticalLayout->addWidget(textError);
 
-        QMetaObject::connectSlotsByName(Widget);
-    } // setupUi
+		retranslateUi(Widget);
 
-    void retranslateUi(QWidget *Widget)
-    {
-        Widget->setWindowTitle(QApplication::translate("Widget", "Widget", nullptr));
-    } // retranslateUi
+		QMetaObject::connectSlotsByName(Widget);
+  } // setupUi
 
+  void retranslateUi(QWidget *Widget) {
+      Widget->setWindowTitle(QApplication::translate("Widget", "Widget", nullptr));
+  } // retranslateUi
 };
 
 namespace Ui {

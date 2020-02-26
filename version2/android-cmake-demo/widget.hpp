@@ -13,6 +13,8 @@ class Widget : public QWidget
 
 public:
 	Widget(QWidget *parent = nullptr);
+	void setOutput(QByteArray &string);
+	void setError(QByteArray &string);
 	~Widget();
 
 private:

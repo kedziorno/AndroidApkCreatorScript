@@ -92,7 +92,7 @@ function(qt_android_build_apk)
             ${APK_DIR}/libs/${CMAKE_ANDROID_ARCH_ABI}
 				COMMAND ${CMAKE_COMMAND} -E copy 
 						"../android/libvotecnode-android.so"
-						${APK_DIR}/libs/${CMAKE_ANDROID_ARCH_ABI}/libandroid-cmake-demo.so
+						${APK_DIR}/libs/${CMAKE_ANDROID_ARCH_ABI}/libvotecnode-android.so
         COMMAND ${QT5_INSTALL_PREFIX}/bin/androiddeployqt
             --verbose
             --output ${APK_DIR}

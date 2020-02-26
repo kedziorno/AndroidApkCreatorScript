@@ -26,14 +26,21 @@ SET(CMAKE_ANDROID_NDK_TOOLCHAIN_VERSION "4.9")
 SET(CMAKE_ANDROID_NDK_TOOLCHAIN_HOST_TAG "linux-x86_64")
 SET(STDCPP_PATH "$ENV{ANDROID_NDK}/sources/cxx-stl/llvm-libc++/libs/armeabi-v7a/libc++_shared.so")
 
-add_library(${PROJECT_NAME} SHARED "main.cpp" "widget.cpp")
+if(BUILD_ARM)
+add_library(${PROJECT_NAME} SHARED "main.cpp" "widget.cpp" "monitor.cpp")
+endif()
+if(BUILD_X86)
+add_executable(${PROJECT_NAME} "main.cpp" "widget.cpp" "monitor.cpp")
+endif()
 target_compile_definitions(${PROJECT_NAME} PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
-target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Core Qt5::Quick)
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Core Qt5::Widgets Qt5::Quick)
 
+if(BUILD_ARM)
 qt_android_build_apk(
     TARGET ${PROJECT_NAME}
     PACKAGE_NAME org.example.QmlCmakeDemo
     QML_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR}
     ANDROID_EXTRA_FILES ${CMAKE_CURRENT_SOURCE_DIR}/android
 )
+endif()
 
