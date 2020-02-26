@@ -13,9 +13,10 @@ cmake \
     -DCMAKE_C_COMPILER=$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/armv7a-linux-androideabi22-clang \
     -DCMAKE_SYSTEM_NAME=ANDROID \
     -DCMAKE_SYSTEM_VERSION=22 \
+		-DCMAKE_PREFIX_PATH=/opt/Qt/5.12.6/android_armv7 \
 		..
 
-make
+VERBOSE=1 make
 
 make android-cmake-demo-apk
 
