@@ -22,5 +22,5 @@ VERBOSE=1 make
 
 make android-cmake-demo-apk
 
-make android-cmake-demo-apk-install
+#make android-cmake-demo-apk-install
 
