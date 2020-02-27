@@ -1,7 +1,8 @@
 #!/bin/sh
 
 export ANDROID_SDK=$HOME/Android/Sdk
-export ANDROID_NDK=$HOME/Android/ndk/21.0.6113669
+#export ANDROID_NDK=$HOME/Android/ndk/21.0.6113669
+export ANDROID_NDK=$ANDROID_NDK_ROOT
 export QT_ROOT=/opt/Qt/5.12.6
 
 rm -rf build
