@@ -41,6 +41,7 @@ void 	Monitor::readyReadStandardError()
 	setProgramStatus(text);
   QProcess *p = (QProcess *)sender();
   QByteArray buf_output = p->readAllStandardError();
+	qDebug() << "readyReadStandardError : " << buf_output; // TODO to much debug
 	w->setOutput(buf_output);
 }
 
@@ -50,6 +51,7 @@ void 	Monitor::readyReadStandardOutput()
 	setProgramStatus(text);
   QProcess *p = (QProcess *)sender();
   QByteArray buf_output = p->readAllStandardOutput();
+	qDebug() << "readyReadStandardOutput : " << buf_output; // TODO to much debug
 	w->setOutput(buf_output);
 }
 
