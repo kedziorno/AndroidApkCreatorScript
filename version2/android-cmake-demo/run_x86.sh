@@ -3,6 +3,7 @@
 export ANDROID_SDK=$HOME/Android/Sdk
 export ANDROID_NDK=$HOME/Android/ndk/21.0.6113669
 export QT_ROOT=/opt/Qt/5.12.6
+export VC_PROJECT_NAME=votecastle-android
 
 rm -rf build
 mkdir build
