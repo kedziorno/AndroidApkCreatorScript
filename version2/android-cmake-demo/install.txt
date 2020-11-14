@@ -1,0 +1,19 @@
+Create Android install package from scripts
+You use at your own risk!
+
+Links:
+- https://androidsdkmanager.azurewebsites.net/SDKPlatform
+- https://androidsdkmanager.azurewebsites.net/Buildtools
+- https://developer.android.com/ndk/downloads/
+- https://androidsdkmanager.azurewebsites.net/SDKTools
+
+I have installed tools in directory `~/Android/Sdk/` :
+- Android NDK / android-ndk-r21d-linux-x86_64.zip
+- Android SDK / platform-29_r01.zip
+- Android Build Tools / build-tools_r29.0.3-linux.zip
+- sdkmanager from tools
+- Android Studio
+
+Then :
+- in directory `~/Android/Sdk/ndk/21.0.6113669/toolchains/` must exist link `llvm -> llvm-4.9` : 
+- run in `~/Android/Sdk/tools/bin` command `sdkmanager --licenses`
